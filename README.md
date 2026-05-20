@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfolio Fabian Gonzalez
 
 This project is a portfolio application that showcases various projects and skills. It is structured into two main parts: the backend and the frontend.
@@ -95,3 +96,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ### License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+=======
+# Portafolio
+>>>>>>> e303f5ece4d062dfa861abfaa204c2a52191e516

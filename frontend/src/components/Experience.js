@@ -1,0 +1,7 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
+const Experience = () => {
+    return (_jsxs("section", { id: "experience", className: "mt-12", children: [_jsx(motion.h3, { initial: { opacity: 0 }, whileInView: { opacity: 1 }, className: "text-2xl font-semibold mb-4", children: _jsxs("span", { className: "inline-flex items-center gap-2", children: [_jsx(Briefcase, {}), " Experiencia"] }) }), _jsxs(motion.article, { className: "card border border-white/10 p-6 rounded-lg", initial: { y: 10, opacity: 0 }, whileInView: { y: 0, opacity: 1 }, transition: { duration: 0.5 }, children: [_jsx("h4", { className: "text-lg font-medium", children: "Rosen S.A. \u2014 GENHORA" }), _jsx("p", { className: "text-sm text-slate-200 mt-2", children: "Desarrollo y mantenimiento del sistema GENHORA: plataforma para gesti\u00F3n horaria y control operativo. Implementaciones con React, Next.js, TypeScript y Oracle SQL. Dise\u00F1o de pipelines de datos y optimizaci\u00F3n de consultas y despliegues." }), _jsxs("ul", { className: "mt-3 text-sm text-gray-400 list-disc list-inside", children: [_jsx("li", { children: "Frontend: React & Next.js, arquitectura modular y performance." }), _jsx("li", { children: "Backend & BD: Integraci\u00F3n con Oracle SQL y APIs escalables." }), _jsx("li", { children: "Operaciones: CI/CD, testing y observabilidad." })] })] })] }));
+};
+export default Experience;

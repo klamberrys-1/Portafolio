@@ -7,12 +7,14 @@ export type Project = {
   desc: string;
   tags: string[];
   accent?: "neon-cyan" | "neon-violet";
+  link?: string;
 };
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <motion.a
-      href={`#${project.id}`}
+      href={project.link || `#${project.id}`}
+      {...(project.link ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.99 }}
       initial={{ opacity: 0, y: 8 }}

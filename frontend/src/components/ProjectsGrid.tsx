@@ -21,7 +21,8 @@ const data: Project[] = [
     title: "Analizador Semántico",
     desc: "Pipeline de análisis semántico usando Groq y Llama 3 para enriquecimiento y búsqueda semántica.",
     tags: ["Groq", "Llama 3", "Semantic Search"],
-    accent: "neon-cyan"
+    accent: "neon-cyan",
+    link: "https://portafolio-6eb68.web.app/"
   }
 ];
 
