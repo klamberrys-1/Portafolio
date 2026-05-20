@@ -58,8 +58,8 @@ const Header: React.FC = () => {
               ))}
             </ul>
             <div className="mt-3 flex gap-2">
-              <a href="https://github.com/Klamberrys" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-md text-center bg-white/5">GitHub</a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-md text-center bg-white/5">LinkedIn</a>
+              <a href="https://github.com/klamberrys-1" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-md text-center bg-white/5">GitHub</a>
+              <a href="https://www.linkedin.com/in/fabian-giovanni-gonzalez-pino/" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-md text-center bg-white/5">LinkedIn</a>
             </div>
           </div>
         )}
