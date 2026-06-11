@@ -3,11 +3,21 @@ import ProjectCard, { Project } from "./ProjectCard";
 
 const data: Project[] = [
   {
+    id: "e2e-framework-aws",
+    title: "Framework Híbrido de Automatización E2E y CI/CD en la Nube",
+    desc: "Arquitectura robusta de pruebas automatizadas con integración continua. Diseñado para certificar la consistencia del software de extremo a extremo, validando flujos de interfaz de usuario y la lógica de negocio en entornos cloud.",
+    tags: ["TypeScript", "Playwright", "GitHub Actions", "AWS S3", "Node.js 24"],
+    accent: "neon-cyan",
+    githubLink: "#",
+    liveLink: "http://fabian-playwright-qa.s3-website.us-east-2.amazonaws.com"
+  },
+  {
     id: "fisur-ia",
     title: "Fisur-IA",
     desc: "Sistema de monitoreo con visión artificial (YOLO, TensorFlow Lite) para detección de fisuras en infraestructuras.",
     tags: ["YOLO", "TensorFlow Lite", "Edge"],
-    accent: "neon-cyan"
+    accent: "neon-cyan",
+    internalLink: "/project/fisur-ia"
   },
   {
     id: "segugestion",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Cpu, Layout, Server, Database, Smartphone, GitBranch } from "lucide-react";
+import { Cpu, Layout, Server, Database, Smartphone, GitBranch, CheckCircle } from "lucide-react";
 
 const skillCategories = [
   {
@@ -31,6 +31,11 @@ const skillCategories = [
     title: "Herramientas & DevOps",
     icon: GitBranch, 
     skills: ["Git / GitHub", "Azure DevOps", "Linux (CLI)", "QlikView / BI"]
+  },
+  {
+    title: "QA & Automatización",
+    icon: CheckCircle, 
+    skills: ["Maven", "Playwright", "RestAssured", "JUnit 5", "Allure Report"]
   }
 ];
 
