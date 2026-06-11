@@ -60,49 +60,51 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 
       {/* Action Buttons */}
       <div className="flex flex-wrap items-center gap-3 mt-auto z-10 pt-4 border-t border-slate-800/50">
-        {project.githubLink && (
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-700/80 border border-slate-700/50 px-4 py-2.5 rounded-lg transition-all"
-          >
-            <Github className="w-4 h-4" />
-            <span>Ver Código</span>
-          </a>
-        )}
-
-        {project.liveLink && (
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 px-4 py-2.5 rounded-lg transition-all flex-grow shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:shadow-[0_0_25px_rgba(0,245,255,0.4)]"
-          >
-            <Cloud className="w-4 h-4" />
-            <span>Reporte en Vivo (AWS)</span>
-          </a>
-        )}
-
-        {!project.githubLink && !project.liveLink && project.internalLink && (
+        {project.internalLink && (
           <Link
             to={project.internalLink}
-            className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 px-4 py-2.5 rounded-lg transition-all w-full shadow-[0_0_15px_rgba(0,245,255,0.2)]"
+            className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-900 bg-violet-400 hover:bg-violet-300 px-4 py-2.5 rounded-lg transition-all w-full shadow-[0_0_15px_rgba(138,43,226,0.2)] hover:shadow-[0_0_25px_rgba(138,43,226,0.4)] mb-2"
           >
-            <span>Ver Detalles Técnicos</span>
+            <span>Ver Caso de Estudio (Detalles Técnicos)</span>
           </Link>
         )}
-        
-        {!project.githubLink && !project.liveLink && !project.internalLink && project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 px-4 py-2.5 rounded-lg transition-all w-full shadow-[0_0_15px_rgba(0,245,255,0.2)]"
-          >
-            <span>Ver Proyecto</span>
-          </a>
-        )}
+
+        <div className="flex flex-wrap w-full gap-3">
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-sm font-medium text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-700/80 border border-slate-700/50 px-4 py-2.5 rounded-lg transition-all flex-grow"
+            >
+              <Github className="w-4 h-4" />
+              <span>Ver Código</span>
+            </a>
+          )}
+
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 px-4 py-2.5 rounded-lg transition-all flex-grow shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:shadow-[0_0_25px_rgba(0,245,255,0.4)]"
+            >
+              <Cloud className="w-4 h-4" />
+              <span>AWS</span>
+            </a>
+          )}
+
+          {!project.githubLink && !project.liveLink && !project.internalLink && project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 px-4 py-2.5 rounded-lg transition-all w-full shadow-[0_0_15px_rgba(0,245,255,0.2)]"
+            >
+              <span>Ver Proyecto</span>
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );

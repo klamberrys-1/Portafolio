@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 
 const Home: React.FC = () => {
     return (
-        <main className="max-w-6xl mx-auto px-6 py-16 text-gray-100">
+        <main className="max-w-5xl mx-auto px-6 py-12 md:py-24 space-y-24">
             <Hero />
             <Experience />
             <ProjectsGrid />

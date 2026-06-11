@@ -3,23 +3,42 @@ import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="pt-28 pb-12">
-      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <p className="text-sm uppercase text-neon-cyan">Ingeniero Civil Informático</p>
-          <h1 className="text-4xl md:text-5xl font-bold mt-3 tracking-tight">Fabián Giovanni González Pino</h1>
-          <h2 className="text-lg text-slate-200 mt-2">Ingeniero Civil Informático | Especialista en IA Aplicada & Full-Stack</h2>
-          <p className="mt-6 text-slate-200 max-w-xl">
-            Ingeniero Civil Informático especializado en el desarrollo de arquitecturas de software escalables e Inteligencia Artificial. Experiencia práctica integrando modelos de Deep Learning, optimizando algoritmos de visión artificial para entornos Edge y desplegando microservicios eficientes en la nube. Orientado a la automatización de procesos, la digitalización y la implementación de soluciones de alta disponibilidad.
-          </p>
+    <section id="hero" className="pt-24 md:pt-36">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8, ease: "easeOut" }} 
+        className="flex flex-col items-start"
+      >
+        <div className="inline-block mb-6">
+          <span className="text-cyan-400 font-mono tracking-wide text-sm bg-cyan-950/30 px-3 py-1 rounded-md border border-cyan-500/20">
+            Ingeniero Civil Informático
+          </span>
         </div>
-        <div className="flex justify-center">
-          <div className="w-56 h-56 rounded-xl card neon-outline flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-sm text-slate-200">IA · Desarrollo Full-Stack · Automatización</p>
-              <div className="mt-4 text-neon-violet">Modelos de Visión (YOLO) · Arquitecturas Escalables · Despliegue Cloud (Docker/Firebase)</div>
-            </div>
-          </div>
+        
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
+          <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            Fabián G. González
+          </span>
+        </h1>
+        
+        <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-tight mb-8 max-w-2xl">
+          Especialista en IA Aplicada & Arquitecturas Full-Stack
+        </h2>
+        
+        <p className="text-base md:text-lg text-slate-400 max-w-3xl leading-relaxed">
+          Diseño e implemento soluciones de software escalables. Mi enfoque está en integrar modelos de Deep Learning, 
+          optimizar algoritmos de visión artificial para entornos Edge y desplegar microservicios 
+          eficientes en la nube, impulsando la automatización y garantizando alta disponibilidad.
+        </p>
+        
+        <div className="mt-12 flex flex-wrap gap-4">
+          <a href="#projects" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-colors duration-300">
+            Ver Proyectos
+          </a>
+          <a href="https://github.com/klamberrys-1" target="_blank" rel="noreferrer" className="px-6 py-3 bg-slate-800/50 hover:bg-slate-700/50 text-white font-medium rounded-lg border border-slate-700 transition-colors duration-300">
+            Perfil en GitHub
+          </a>
         </div>
       </motion.div>
     </section>

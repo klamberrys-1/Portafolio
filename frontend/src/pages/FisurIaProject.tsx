@@ -13,10 +13,10 @@ const FisurIaProject: React.FC = () => {
           <div className="absolute top-40 -left-40 w-96 h-96 bg-violet-500/10 rounded-full blur-[100px]" />
         </div>
 
-        <Link to="/portfolio" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors mb-12 group font-medium">
+        <a href="https://portafolio-fabian.web.app/" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors mb-12 group font-medium">
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           Volver al portafolio
-        </Link>
+        </a>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
