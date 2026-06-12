@@ -10,34 +10,42 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.8, ease: "easeOut" }} 
         className="flex flex-col items-start"
       >
-        <div className="inline-block mb-6">
-          <span className="text-cyan-400 font-mono tracking-wide text-sm bg-cyan-950/30 px-3 py-1 rounded-md border border-cyan-500/20">
-            Ingeniero Civil Informático
+        <div className="inline-block mb-4 md:mb-6">
+          <span className="font-mono text-cyan-400 text-sm md:text-base tracking-wider uppercase block bg-cyan-950/30 px-4 py-1.5 rounded-md border border-cyan-500/20">
+            Ingeniero Civil Informático | QA Automation Engineer
           </span>
         </div>
         
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white">
           <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-            Fabián G. González
+            Fabián G. González Pino
           </span>
         </h1>
         
-        <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-tight mb-8 max-w-2xl">
-          Especialista en IA Aplicada & Arquitecturas Full-Stack
-        </h2>
-        
-        <p className="text-base md:text-lg text-slate-400 max-w-3xl leading-relaxed">
-          Diseño e implemento soluciones de software escalables. Mi enfoque está en integrar modelos de Deep Learning, 
-          optimizar algoritmos de visión artificial para entornos Edge y desplegar microservicios 
-          eficientes en la nube, impulsando la automatización y garantizando alta disponibilidad.
+        <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-3xl mb-10"> 
+          Mi enfoque combina la rigurosidad de la ingeniería de software con el testing técnico: 
+          optimizo suites de pruebas integrando automatización frontend con <span className="text-slate-200 font-semibold">Playwright</span>, 
+          validación avanzada de <span className="text-slate-200 font-semibold">APIs REST</span> y análisis de 
+          consistencia de datos backend en <span className="text-slate-200 font-semibold">SQL</span>. Gracias a 
+          mi experiencia en el desarrollo de microservicios y modelos de visión artificial para entornos Edge, 
+          poseo una capacidad profunda para comprender arquitecturas de software complejas desde la raíz. Esto 
+          me permite diseñar estrategias de prueba, aislar entornos mediante <span className="text-slate-200 font-semibold">Docker</span> y 
+          configurar pipelines iniciales de CI/CD para mitigar falsos positivos en células ágiles.
         </p>
         
-        <div className="mt-12 flex flex-wrap gap-4">
-          <a href="#projects" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-colors duration-300">
+        <div className="flex flex-wrap gap-4">
+          <a 
+            href="#projects" 
+            className="bg-cyan-500 text-slate-950 px-6 py-3 rounded-lg font-semibold shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:bg-cyan-400 transition-all"
+          >
             Ver Proyectos
           </a>
-          <a href="https://github.com/klamberrys-1" target="_blank" rel="noreferrer" className="px-6 py-3 bg-slate-800/50 hover:bg-slate-700/50 text-white font-medium rounded-lg border border-slate-700 transition-colors duration-300">
-            Perfil en GitHub
+          <a 
+            href="/CV/Cv_Fabián_González.pdf" 
+            download="CV_Fabian_Gonzalez.pdf"
+            className="border border-slate-700 text-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-800/50 hover:text-white transition-all"
+          >
+            Descargar CV
           </a>
         </div>
       </motion.div>

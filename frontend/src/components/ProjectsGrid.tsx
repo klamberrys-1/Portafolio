@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-// Eliminamos la dependencia directa de ProjectCard y FisuriaCard para usar una Bento Grid personalizada.
 type Project = {
   id: string;
   title: string;
@@ -8,6 +8,7 @@ type Project = {
   tags: string[];
   liveLink?: string;
   githubLink?: string;
+  internalLink?: string;
 };
 
 const data: Project[] = [
@@ -18,12 +19,14 @@ const data: Project[] = [
     tags: ["TypeScript", "Playwright", "GitHub Actions", "AWS S3", "Node"],
     liveLink: "http://fabian-playwright-qa.s3-website.us-east-2.amazonaws.com",
     githubLink: "#",
+    internalLink: "/project/e2e-framework"
   },
   {
     id: "fisur-ia",
     title: "Fisur-IA: Computer Vision Edge",
     desc: "Sistema de monitoreo de infraestructuras utilizando modelos YOLO y TensorFlow Lite para la detección de fisuras en tiempo real sobre dispositivos Edge.",
     tags: ["YOLO", "TensorFlow Lite", "Edge AI", "Python"],
+    internalLink: "/project/fisur-ia"
   },
   {
     id: "analizador-semantico",
@@ -40,6 +43,26 @@ const data: Project[] = [
   }
 ];
 
+// Componente reutilizable para el ícono de enlace (interno o externo)
+const LinkIcon = ({ href, isInternal }: { href: string; isInternal?: boolean }) => {
+  if (isInternal) {
+    return (
+      <Link to={href} className="text-slate-400 hover:text-white transition-colors p-1" aria-label="Ver Detalles del Proyecto">
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </Link>
+    );
+  }
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors p-1" aria-label="Ver Proyecto en Vivo">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  );
+};
+
 const ProjectsGrid: React.FC = () => {
   return (
     <section id="projects" className="scroll-mt-28">
@@ -55,13 +78,12 @@ const ProjectsGrid: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="p-8 h-full flex flex-col justify-between relative z-10">
             <div>
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex justify-between items-start mb-4 gap-4">
                 <h4 className="text-2xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">{data[0].title}</h4>
-                {data[0].liveLink && (
-                  <a href={data[0].liveLink} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="Ver Proyecto">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                  </a>
-                )}
+                <div className="flex gap-2">
+                  {data[0].internalLink && <LinkIcon href={data[0].internalLink} isInternal />}
+                  {data[0].liveLink && <LinkIcon href={data[0].liveLink} />}
+                </div>
               </div>
               <p className="text-slate-400 mb-6 leading-relaxed">{data[0].desc}</p>
             </div>
@@ -78,7 +100,11 @@ const ProjectsGrid: React.FC = () => {
            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
            <div className="p-8 h-full flex flex-col justify-between relative z-10">
             <div>
-              <h4 className="text-xl font-bold text-slate-100 group-hover:text-violet-400 transition-colors mb-3">{data[1].title}</h4>
+              <div className="flex justify-between items-start mb-3 gap-4">
+                <h4 className="text-xl font-bold text-slate-100 group-hover:text-violet-400 transition-colors">{data[1].title}</h4>
+                {data[1].internalLink && <LinkIcon href={data[1].internalLink} isInternal />}
+                {data[1].liveLink && <LinkIcon href={data[1].liveLink} />}
+              </div>
               <p className="text-slate-400 text-sm mb-6 leading-relaxed">{data[1].desc}</p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -93,13 +119,10 @@ const ProjectsGrid: React.FC = () => {
         <div className="group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition-colors duration-500">
            <div className="p-8 h-full flex flex-col justify-between relative z-10">
             <div>
-              <div className="flex justify-between items-start mb-3">
+              <div className="flex justify-between items-start mb-3 gap-4">
                 <h4 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">{data[2].title}</h4>
-                {data[2].liveLink && (
-                  <a href={data[2].liveLink} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="Ver Proyecto">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                  </a>
-                )}
+                {data[2].internalLink && <LinkIcon href={data[2].internalLink} isInternal />}
+                {data[2].liveLink && <LinkIcon href={data[2].liveLink} />}
               </div>
               <p className="text-slate-400 text-sm mb-6 leading-relaxed">{data[2].desc}</p>
             </div>
@@ -115,7 +138,11 @@ const ProjectsGrid: React.FC = () => {
         <div className="md:col-span-2 group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition-colors duration-500 lg:col-span-2">
            <div className="p-8 h-full flex flex-col justify-between relative z-10">
             <div>
-              <h4 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors mb-3">{data[3].title}</h4>
+              <div className="flex justify-between items-start mb-3 gap-4">
+                <h4 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">{data[3].title}</h4>
+                {data[3].internalLink && <LinkIcon href={data[3].internalLink} isInternal />}
+                {data[3].liveLink && <LinkIcon href={data[3].liveLink} />}
+              </div>
               <p className="text-slate-400 text-sm mb-6 leading-relaxed">{data[3].desc}</p>
             </div>
             <div className="flex flex-wrap gap-2">
